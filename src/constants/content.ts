@@ -77,3 +77,12 @@ export const vueTsxContent = (componentName: string) => {
     export default ${componentName}
     `;
 };
+
+export const classContent = (className: string) => {
+  return `
+    class ${className} {
+    }
+
+    export default ${className}
+    `;
+};

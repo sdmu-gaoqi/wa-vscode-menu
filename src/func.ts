@@ -5,6 +5,7 @@ import * as fs from "fs";
 import * as prettier from "prettier";
 import { getInitConstants } from "./initConstants";
 import {
+  classContent,
   jsxContent,
   tsxContent,
   vueTemplateContent,
@@ -68,7 +69,6 @@ export const funcs = {
       }
     } catch (err) {
       vscode.window.showErrorMessage("文件转换失败", JSON.stringify(err));
-      console.log(err, "xlsx======error");
     }
   },
   // 生成React组件
@@ -105,7 +105,6 @@ export const funcs = {
       .then((res) => {
         fs.writeFileSync(filePath, res, "utf8");
       });
-    console.log("menuLog");
   },
   // 生成vue组件
   createVue: async (document: vscode.Uri) => {
@@ -137,6 +136,41 @@ export const funcs = {
 
     const filePath = `${document.path}/${fileName}`;
     fs.writeFileSync(filePath, fileContent, "utf8");
-    console.log("menuLog");
+  },
+  // 生成class
+  createClass: async (document: vscode.Uri) => {
+    const fileName = await vscode.window.showInputBox({
+      prompt: "请输入文件名",
+      value: "index.ts",
+    });
+    if (!fileName) {
+      return;
+    }
+    (global as any).document = document;
+    const className = await vscode.window.showInputBox({
+      prompt: "请输入类名",
+      value: "",
+    });
+
+    if (!className) {
+      return;
+    }
+
+    const fileContent = classContent(className);
+
+    const config = await prettier.resolveConfig("path/to/file", {
+      useCache: false,
+    });
+
+    const filePath = `${document.path}/${fileName}`;
+    prettier
+      .format(fileContent, {
+        ...config,
+        semi: false,
+        filepath: filePath,
+      })
+      .then((res) => {
+        fs.writeFileSync(filePath, res, "utf8");
+      });
   },
 };

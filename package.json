@@ -52,6 +52,11 @@
           "command": "extension.createVue",
           "group": "typescript support",
           "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "extension.createClass",
+          "group": "typescript support",
+          "when": "explorerResourceIsFolder"
         }
       ],
       "editor/title/context": [
@@ -83,6 +88,10 @@
       {
         "command": "extension.createVue",
         "title": "生成vue组件"
+      },
+      {
+        "command": "extension.createClass",
+        "title": "生成一个类"
       }
     ]
   },
