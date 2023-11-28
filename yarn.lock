@@ -7,7 +7,7 @@
   resolved "https://npm.papegames.com/@aashutoshrathi%2fword-wrap/-/word-wrap-1.2.6.tgz"
   integrity sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==
 
-"@babel/code-frame@^7.0.0":
+"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.21.4":
   version "7.23.4"
   resolved "https://npm.papegames.com/@babel%2fcode-frame/-/code-frame-7.23.4.tgz"
   integrity sha512-r1IONyb6Ia+jYR2vvIDhdWdlTGhqbBoFqLTQidzZ4kepUFH15ejXvFHxCVbtl7BOXIudsIubf4E81xeA3h3IXA==
@@ -84,6 +84,11 @@
   version "2.0.0"
   resolved "https://npm.papegames.com/@humanwhocodes%2fobject-schema/-/object-schema-2.0.0.tgz"
   integrity sha512-9S9QrXY2K0L4AGDcSgTi9vgiCcG8VcBv4Mp7/1hDPYoswIy6Z6KO5blYto82BT8M0MZNRWmCFLpCs3HlpYGGdw==
+
+"@hutson/parse-repository-url@^5.0.0":
+  version "5.0.0"
+  resolved "https://npm.papegames.com/@hutson%2fparse-repository-url/-/parse-repository-url-5.0.0.tgz#bf344cc75136039bc41bcf5d1ddbcb40405fca3b"
+  integrity sha1-vzRMx1E2A5vEG89dHdvLQEBfyjs=
 
 "@iarna/toml@2.2.5":
   version "2.2.5"
@@ -274,6 +279,16 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
+"@release-it/conventional-changelog@^8.0.1":
+  version "8.0.1"
+  resolved "https://npm.papegames.com/@release-it%2fconventional-changelog/-/conventional-changelog-8.0.1.tgz#7aba0162769a001b11fa72ab05ca3f108c2657e3"
+  integrity sha512-pwc9jaBYDaSX5TXw6rEnPfqDkKJN2sFBhYpON1kBi9T3sA9EOBncC4ed0Bv3L1ciNb6eqEJXPfp+tQMqVlv/eg==
+  dependencies:
+    concat-stream "^2.0.0"
+    conventional-changelog "^5.1.0"
+    conventional-recommended-bump "^9.0.0"
+    semver "^7.5.4"
+
 "@sindresorhus/is@^5.2.0":
   version "5.6.0"
   resolved "https://npm.papegames.com/@sindresorhus%2fis/-/is-5.6.0.tgz"
@@ -354,6 +369,11 @@
   version "20.2.5"
   resolved "https://npm.papegames.com/@types%2fnode/-/node-20.2.5.tgz"
   integrity sha512-JJulVEQXmiY9Px5axXHeYGLSjhkZEnD+MDPDGbCbIAbMslkKwmygtZFy1X6s/075Yo94sf8GuSlFfPzysQrWZQ==
+
+"@types/normalize-package-data@^2.4.1":
+  version "2.4.4"
+  resolved "https://npm.papegames.com/@types%2fnormalize-package-data/-/normalize-package-data-2.4.4.tgz#56e2cc26c397c038fab0e3a917a12d5c5909e901"
+  integrity sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==
 
 "@types/semver@^7.3.12":
   version "7.5.4"
@@ -605,6 +625,14 @@
   resolved "https://npm.papegames.com/@xtuc%2flong/-/long-4.2.2.tgz"
   integrity sha1-0pHGpOl5ibXGHZrPOWrk/hM6cY0=
 
+JSONStream@^1.3.5:
+  version "1.3.5"
+  resolved "https://npm.papegames.com/JSONStream/-/JSONStream-1.3.5.tgz#3208c1f08d3a4d99261ab64f92302bc15e111ca0"
+  integrity sha1-MgjB8I06TZkmGrZPkjArwV4RHKA=
+  dependencies:
+    jsonparse "^1.2.0"
+    through ">=2.2.7 <3"
+
 acorn-import-assertions@^1.9.0:
   version "1.9.0"
   resolved "https://npm.papegames.com/acorn-import-assertions/-/acorn-import-assertions-1.9.0.tgz"
@@ -619,6 +647,11 @@ acorn@^8.7.1, acorn@^8.8.2, acorn@^8.9.0:
   version "8.10.0"
   resolved "https://npm.papegames.com/acorn/-/acorn-8.10.0.tgz"
   integrity sha512-F0SAmZ8iUtS//m8DmCTA0jlh6TDKkHQyK6xc6V4KDTyZKA9dnvX9/3sRTVQrWm79glUAZbnmmNcdYwUIHWVybw==
+
+add-stream@^1.0.0:
+  version "1.0.0"
+  resolved "https://npm.papegames.com/add-stream/-/add-stream-1.0.0.tgz#6a7990437ca736d5e1288db92bd3266d5f5cb2aa"
+  integrity sha1-anmQQ3ynNtXhKI25K9MmbV9csqo=
 
 adler-32@~1.3.0:
   version "1.3.1"
@@ -722,6 +755,11 @@ array-buffer-byte-length@^1.0.0:
   dependencies:
     call-bind "^1.0.2"
     is-array-buffer "^3.0.1"
+
+array-ify@^1.0.0:
+  version "1.0.0"
+  resolved "https://npm.papegames.com/array-ify/-/array-ify-1.0.0.tgz#9e528762b4a9066ad163a6962a364418e9626ece"
+  integrity sha1-nlKHYrSpBmrRY6aWKjZEGOlibs4=
 
 array-union@^2.1.0:
   version "2.1.0"
@@ -1108,10 +1146,28 @@ commander@^2.20.0:
   resolved "https://npm.papegames.com/commander/-/commander-2.20.3.tgz"
   integrity sha1-/UhehMA+tIgcIHIrpIA16FMa6zM=
 
+compare-func@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.papegames.com/compare-func/-/compare-func-2.0.0.tgz#fb65e75edbddfd2e568554e8b5b05fff7a51fcb3"
+  integrity sha1-+2XnXtvd/S5WhVTotbBf/3pR/LM=
+  dependencies:
+    array-ify "^1.0.0"
+    dot-prop "^5.1.0"
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://npm.papegames.com/concat-map/-/concat-map-0.0.1.tgz"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
+
+concat-stream@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.papegames.com/concat-stream/-/concat-stream-2.0.0.tgz#414cf5af790a48c60ab9be4527d56d5e41133cb1"
+  integrity sha1-QUz1r3kKSMYKub5FJ9VtXkETPLE=
+  dependencies:
+    buffer-from "^1.0.0"
+    inherits "^2.0.3"
+    readable-stream "^3.0.2"
+    typedarray "^0.0.6"
 
 config-chain@^1.1.11:
   version "1.1.13"
@@ -1131,6 +1187,134 @@ configstore@^6.0.0:
     unique-string "^3.0.0"
     write-file-atomic "^3.0.3"
     xdg-basedir "^5.0.1"
+
+conventional-changelog-angular@^7.0.0:
+  version "7.0.0"
+  resolved "https://npm.papegames.com/conventional-changelog-angular/-/conventional-changelog-angular-7.0.0.tgz#5eec8edbff15aa9b1680a8dcfbd53e2d7eb2ba7a"
+  integrity sha512-ROjNchA9LgfNMTTFSIWPzebCwOGFdgkEq45EnvvrmSLvCtAw0HSmrCs7/ty+wAeYUZyNay0YMUNYFTRL72PkBQ==
+  dependencies:
+    compare-func "^2.0.0"
+
+conventional-changelog-atom@^4.0.0:
+  version "4.0.0"
+  resolved "https://npm.papegames.com/conventional-changelog-atom/-/conventional-changelog-atom-4.0.0.tgz#291fd1583517d4e7131dba779ad9fa238359daa1"
+  integrity sha512-q2YtiN7rnT1TGwPTwjjBSIPIzDJCRE+XAUahWxnh+buKK99Kks4WLMHoexw38GXx9OUxAsrp44f9qXe5VEMYhw==
+
+conventional-changelog-codemirror@^4.0.0:
+  version "4.0.0"
+  resolved "https://npm.papegames.com/conventional-changelog-codemirror/-/conventional-changelog-codemirror-4.0.0.tgz#3421aced2377552229cef454447aa06e2a319516"
+  integrity sha512-hQSojc/5imn1GJK3A75m9hEZZhc3urojA5gMpnar4JHmgLnuM3CUIARPpEk86glEKr3c54Po3WV/vCaO/U8g3Q==
+
+conventional-changelog-conventionalcommits@^7.0.2:
+  version "7.0.2"
+  resolved "https://npm.papegames.com/conventional-changelog-conventionalcommits/-/conventional-changelog-conventionalcommits-7.0.2.tgz#aa5da0f1b2543094889e8cf7616ebe1a8f5c70d5"
+  integrity sha512-NKXYmMR/Hr1DevQegFB4MwfM5Vv0m4UIxKZTTYuD98lpTknaZlSRrDOG4X7wIXpGkfsYxZTghUN+Qq+T0YQI7w==
+  dependencies:
+    compare-func "^2.0.0"
+
+conventional-changelog-core@^7.0.0:
+  version "7.0.0"
+  resolved "https://npm.papegames.com/conventional-changelog-core/-/conventional-changelog-core-7.0.0.tgz#d8879ebb8692cd1fa8126c209e1b3af34d94e113"
+  integrity sha512-UYgaB1F/COt7VFjlYKVE/9tTzfU3VUq47r6iWf6lM5T7TlOxr0thI63ojQueRLIpVbrtHK4Ffw+yQGduw2Bhdg==
+  dependencies:
+    "@hutson/parse-repository-url" "^5.0.0"
+    add-stream "^1.0.0"
+    conventional-changelog-writer "^7.0.0"
+    conventional-commits-parser "^5.0.0"
+    git-raw-commits "^4.0.0"
+    git-semver-tags "^7.0.0"
+    hosted-git-info "^7.0.0"
+    normalize-package-data "^6.0.0"
+    read-pkg "^8.0.0"
+    read-pkg-up "^10.0.0"
+
+conventional-changelog-ember@^4.0.0:
+  version "4.0.0"
+  resolved "https://npm.papegames.com/conventional-changelog-ember/-/conventional-changelog-ember-4.0.0.tgz#d90409083a840cd8955bf8257b17498fc539db6a"
+  integrity sha512-D0IMhwcJUg1Y8FSry6XAplEJcljkHVlvAZddhhsdbL1rbsqRsMfGx/PIkPYq0ru5aDgn+OxhQ5N5yR7P9mfsvA==
+
+conventional-changelog-eslint@^5.0.0:
+  version "5.0.0"
+  resolved "https://npm.papegames.com/conventional-changelog-eslint/-/conventional-changelog-eslint-5.0.0.tgz#d7f428f787f079b3ce08ccc76ed46d4b1852f41b"
+  integrity sha512-6JtLWqAQIeJLn/OzUlYmzd9fKeNSWmQVim9kql+v4GrZwLx807kAJl3IJVc3jTYfVKWLxhC3BGUxYiuVEcVjgA==
+
+conventional-changelog-express@^4.0.0:
+  version "4.0.0"
+  resolved "https://npm.papegames.com/conventional-changelog-express/-/conventional-changelog-express-4.0.0.tgz#5f50086bae1cd9887959af1fa3d5244fd1f55974"
+  integrity sha512-yWyy5c7raP9v7aTvPAWzqrztACNO9+FEI1FSYh7UP7YT1AkWgv5UspUeB5v3Ibv4/o60zj2o9GF2tqKQ99lIsw==
+
+conventional-changelog-jquery@^5.0.0:
+  version "5.0.0"
+  resolved "https://npm.papegames.com/conventional-changelog-jquery/-/conventional-changelog-jquery-5.0.0.tgz#d56e5cc9158b5035669ac6e0f773c3e593621887"
+  integrity sha512-slLjlXLRNa/icMI3+uGLQbtrgEny3RgITeCxevJB+p05ExiTgHACP5p3XiMKzjBn80n+Rzr83XMYfRInEtCPPw==
+
+conventional-changelog-jshint@^4.0.0:
+  version "4.0.0"
+  resolved "https://npm.papegames.com/conventional-changelog-jshint/-/conventional-changelog-jshint-4.0.0.tgz#95aec357f9122b214671381ef94124287208ece9"
+  integrity sha512-LyXq1bbl0yG0Ai1SbLxIk8ZxUOe3AjnlwE6sVRQmMgetBk+4gY9EO3d00zlEt8Y8gwsITytDnPORl8al7InTjg==
+  dependencies:
+    compare-func "^2.0.0"
+
+conventional-changelog-preset-loader@^4.1.0:
+  version "4.1.0"
+  resolved "https://npm.papegames.com/conventional-changelog-preset-loader/-/conventional-changelog-preset-loader-4.1.0.tgz#996bc40d516471c5bf8248fdc30222563b9bcfe6"
+  integrity sha512-HozQjJicZTuRhCRTq4rZbefaiCzRM2pr6u2NL3XhrmQm4RMnDXfESU6JKu/pnKwx5xtdkYfNCsbhN5exhiKGJA==
+
+conventional-changelog-writer@^7.0.0:
+  version "7.0.1"
+  resolved "https://npm.papegames.com/conventional-changelog-writer/-/conventional-changelog-writer-7.0.1.tgz#e64ef74fa8e773cab4124af217f3f02b29eb0a9c"
+  integrity sha512-Uo+R9neH3r/foIvQ0MKcsXkX642hdm9odUp7TqgFS7BsalTcjzRlIfWZrZR1gbxOozKucaKt5KAbjW8J8xRSmA==
+  dependencies:
+    conventional-commits-filter "^4.0.0"
+    handlebars "^4.7.7"
+    json-stringify-safe "^5.0.1"
+    meow "^12.0.1"
+    semver "^7.5.2"
+    split2 "^4.0.0"
+
+conventional-changelog@^5.1.0:
+  version "5.1.0"
+  resolved "https://npm.papegames.com/conventional-changelog/-/conventional-changelog-5.1.0.tgz#04b36a5ad0518e0323e9d629e3b86e34f7abb7eb"
+  integrity sha512-aWyE/P39wGYRPllcCEZDxTVEmhyLzTc9XA6z6rVfkuCD2UBnhV/sgSOKbQrEG5z9mEZJjnopjgQooTKxEg8mAg==
+  dependencies:
+    conventional-changelog-angular "^7.0.0"
+    conventional-changelog-atom "^4.0.0"
+    conventional-changelog-codemirror "^4.0.0"
+    conventional-changelog-conventionalcommits "^7.0.2"
+    conventional-changelog-core "^7.0.0"
+    conventional-changelog-ember "^4.0.0"
+    conventional-changelog-eslint "^5.0.0"
+    conventional-changelog-express "^4.0.0"
+    conventional-changelog-jquery "^5.0.0"
+    conventional-changelog-jshint "^4.0.0"
+    conventional-changelog-preset-loader "^4.1.0"
+
+conventional-commits-filter@^4.0.0:
+  version "4.0.0"
+  resolved "https://npm.papegames.com/conventional-commits-filter/-/conventional-commits-filter-4.0.0.tgz#845d713e48dc7d1520b84ec182e2773c10c7bf7f"
+  integrity sha512-rnpnibcSOdFcdclpFwWa+pPlZJhXE7l+XK04zxhbWrhgpR96h33QLz8hITTXbcYICxVr3HZFtbtUAQ+4LdBo9A==
+
+conventional-commits-parser@^5.0.0:
+  version "5.0.0"
+  resolved "https://npm.papegames.com/conventional-commits-parser/-/conventional-commits-parser-5.0.0.tgz#57f3594b81ad54d40c1b4280f04554df28627d9a"
+  integrity sha512-ZPMl0ZJbw74iS9LuX9YIAiW8pfM5p3yh2o/NbXHbkFuZzY5jvdi5jFycEOkmBW5H5I7nA+D6f3UcsCLP2vvSEA==
+  dependencies:
+    JSONStream "^1.3.5"
+    is-text-path "^2.0.0"
+    meow "^12.0.1"
+    split2 "^4.0.0"
+
+conventional-recommended-bump@^9.0.0:
+  version "9.0.0"
+  resolved "https://npm.papegames.com/conventional-recommended-bump/-/conventional-recommended-bump-9.0.0.tgz#2910b08b10e6c705301335ab916e7438eba5907f"
+  integrity sha512-HR1yD0G5HgYAu6K0wJjLd7QGRK8MQDqqj6Tn1n/ja1dFwBCE6QmV+iSgQ5F7hkx7OUR/8bHpxJqYtXj2f/opPQ==
+  dependencies:
+    conventional-changelog-preset-loader "^4.1.0"
+    conventional-commits-filter "^4.0.0"
+    conventional-commits-parser "^5.0.0"
+    git-raw-commits "^4.0.0"
+    git-semver-tags "^7.0.0"
+    meow "^12.0.1"
 
 core-util-is@~1.0.0:
   version "1.0.3"
@@ -1167,6 +1351,11 @@ crypto-random-string@^4.0.0:
   integrity sha1-WjzFPX3YYYPfXaAxKBbO7rW7H8I=
   dependencies:
     type-fest "^1.0.1"
+
+dargs@^8.0.0:
+  version "8.1.0"
+  resolved "https://npm.papegames.com/dargs/-/dargs-8.1.0.tgz#a34859ea509cbce45485e5aa356fef70bfcc7272"
+  integrity sha1-o0hZ6lCcvORUheWqNW/vcL/McnI=
 
 data-uri-to-buffer@^4.0.0:
   version "4.0.1"
@@ -1293,6 +1482,13 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+dot-prop@^5.1.0:
+  version "5.3.0"
+  resolved "https://npm.papegames.com/dot-prop/-/dot-prop-5.3.0.tgz#90ccce708cd9cd82cc4dc8c3ddd9abdd55b20e88"
+  integrity sha1-kMzOcIzZzYLMTcjD3dmr3VWyDog=
+  dependencies:
+    is-obj "^2.0.0"
+
 dot-prop@^6.0.1:
   version "6.0.1"
   resolved "https://npm.papegames.com/dot-prop/-/dot-prop-6.0.1.tgz"
@@ -1338,7 +1534,7 @@ envinfo@^7.7.3:
   resolved "https://npm.papegames.com/envinfo/-/envinfo-7.10.0.tgz"
   integrity sha512-ZtUjZO6l5mwTHvc1L9+1q5p/R3wTopcfqMW8r5t8SJSKqeVI/LtajORwRFEKpEFuekjD0VBjwu1HMxL4UalIRw==
 
-error-ex@^1.3.1:
+error-ex@^1.3.1, error-ex@^1.3.2:
   version "1.3.2"
   resolved "https://npm.papegames.com/error-ex/-/error-ex-1.3.2.tgz"
   integrity sha1-tKxAZIEH/c3PriQvQovqihTU8b8=
@@ -1719,6 +1915,14 @@ find-up@^4.0.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
+find-up@^6.3.0:
+  version "6.3.0"
+  resolved "https://npm.papegames.com/find-up/-/find-up-6.3.0.tgz#2abab3d3280b2dc7ac10199ef324c4e002c8c790"
+  integrity sha512-v2ZsoEuVHYy8ZIlYqwPe/39Cy+cFDzp4dXPaxNvkEuouymu+2Jbz0PxpKarJHYJTmv2HWT3O382qY8l4jMWthw==
+  dependencies:
+    locate-path "^7.1.0"
+    path-exists "^5.0.0"
+
 flat-cache@^3.0.4:
   version "3.1.1"
   resolved "https://npm.papegames.com/flat-cache/-/flat-cache-3.1.1.tgz"
@@ -1848,6 +2052,23 @@ get-uri@^6.0.1:
     data-uri-to-buffer "^6.0.0"
     debug "^4.3.4"
     fs-extra "^8.1.0"
+
+git-raw-commits@^4.0.0:
+  version "4.0.0"
+  resolved "https://npm.papegames.com/git-raw-commits/-/git-raw-commits-4.0.0.tgz#b212fd2bff9726d27c1283a1157e829490593285"
+  integrity sha512-ICsMM1Wk8xSGMowkOmPrzo2Fgmfo4bMHLNX6ytHjajRJUqvHOw/TFapQ+QG75c3X/tTDDhOSRPGC52dDbNM8FQ==
+  dependencies:
+    dargs "^8.0.0"
+    meow "^12.0.1"
+    split2 "^4.0.0"
+
+git-semver-tags@^7.0.0:
+  version "7.0.1"
+  resolved "https://npm.papegames.com/git-semver-tags/-/git-semver-tags-7.0.1.tgz#74426e7d7710e5a263655e78b4c651eed804d63e"
+  integrity sha512-NY0ZHjJzyyNXHTDZmj+GG7PyuAKtMsyWSwh07CR2hOZFa+/yoTsXci/nF2obzL8UDhakFNkD9gNdt/Ed+cxh2Q==
+  dependencies:
+    meow "^12.0.1"
+    semver "^7.5.2"
 
 git-up@^7.0.0:
   version "7.0.0"
@@ -2019,6 +2240,18 @@ graphemer@^1.4.0:
   resolved "https://npm.papegames.com/graphemer/-/graphemer-1.4.0.tgz"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
 
+handlebars@^4.7.7:
+  version "4.7.8"
+  resolved "https://npm.papegames.com/handlebars/-/handlebars-4.7.8.tgz#41c42c18b1be2365439188c77c6afae71c0cd9e9"
+  integrity sha512-vafaFqs8MZkRrSX7sFVUdo3ap/eNiLnb4IakshzvP56X5Nr1iGKAIqdX6tMlm6HcNRIkr6AxO5jFEoJzzpT8aQ==
+  dependencies:
+    minimist "^1.2.5"
+    neo-async "^2.6.2"
+    source-map "^0.6.1"
+    wordwrap "^1.0.0"
+  optionalDependencies:
+    uglify-js "^3.1.4"
+
 has-bigints@^1.0.1, has-bigints@^1.0.2:
   version "1.0.2"
   resolved "https://npm.papegames.com/has-bigints/-/has-bigints-1.0.2.tgz"
@@ -2074,6 +2307,13 @@ he@1.2.0:
   version "1.2.0"
   resolved "https://npm.papegames.com/he/-/he-1.2.0.tgz"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
+
+hosted-git-info@^7.0.0:
+  version "7.0.1"
+  resolved "https://npm.papegames.com/hosted-git-info/-/hosted-git-info-7.0.1.tgz#9985fcb2700467fecf7f33a4d4874e30680b5322"
+  integrity sha512-+K84LB1DYwMHoHSgaOY/Jfhw3ucPmSET5v98Ke/HdNSw4a0UktWzyW1mjhjpuxxTqOOsfWT/7iVshHmVZ4IpOA==
+  dependencies:
+    lru-cache "^10.0.1"
 
 http-cache-semantics@^4.1.1:
   version "4.1.1"
@@ -2320,6 +2560,13 @@ is-core-module@^2.13.0:
   dependencies:
     has "^1.0.3"
 
+is-core-module@^2.8.1:
+  version "2.13.1"
+  resolved "https://npm.papegames.com/is-core-module/-/is-core-module-2.13.1.tgz#ad0d7532c6fea9da1ebdc82742d74525c6273384"
+  integrity sha512-hHrIjvZsftOsvKSn2TRYl63zvxsgE0K+0mYMoH6gD4omR5IWB2KynivBQczo3+wF1cCkjzvptnI9Q0sPU66ilw==
+  dependencies:
+    hasown "^2.0.0"
+
 is-date-object@^1.0.1:
   version "1.0.5"
   resolved "https://npm.papegames.com/is-date-object/-/is-date-object-1.0.5.tgz"
@@ -2484,6 +2731,13 @@ is-symbol@^1.0.2, is-symbol@^1.0.3:
   dependencies:
     has-symbols "^1.0.2"
 
+is-text-path@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.papegames.com/is-text-path/-/is-text-path-2.0.0.tgz#b2484e2b720a633feb2e85b67dc193ff72c75636"
+  integrity sha1-skhOK3IKYz/rLoW2fcGT/3LHVjY=
+  dependencies:
+    text-extensions "^2.0.0"
+
 is-typed-array@^1.1.10, is-typed-array@^1.1.12, is-typed-array@^1.1.9:
   version "1.1.12"
   resolved "https://npm.papegames.com/is-typed-array/-/is-typed-array-1.1.12.tgz"
@@ -2595,6 +2849,11 @@ json-parse-even-better-errors@^2.3.0, json-parse-even-better-errors@^2.3.1:
   resolved "https://npm.papegames.com/json-parse-even-better-errors/-/json-parse-even-better-errors-2.3.1.tgz"
   integrity sha1-fEeAWpQxmSjgV3dAXcEuH3pO4C0=
 
+json-parse-even-better-errors@^3.0.0:
+  version "3.0.1"
+  resolved "https://npm.papegames.com/json-parse-even-better-errors/-/json-parse-even-better-errors-3.0.1.tgz#02bb29fb5da90b5444581749c22cedd3597c6cb0"
+  integrity sha512-aatBvbL26wVUCLmbWdCpeu9iF5wOyWpagiKkInA+kfws3sWdBrTnsvN2CKcyCYyUrc7rebNBlK6+kteg7ksecg==
+
 json-schema-traverse@^0.4.1:
   version "0.4.1"
   resolved "https://npm.papegames.com/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz"
@@ -2605,12 +2864,22 @@ json-stable-stringify-without-jsonify@^1.0.1:
   resolved "https://npm.papegames.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz"
   integrity sha1-nbe1lJatPzz+8wp1FC0tkwrXJlE=
 
+json-stringify-safe@^5.0.1:
+  version "5.0.1"
+  resolved "https://npm.papegames.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
+  integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
+
 jsonfile@^4.0.0:
   version "4.0.0"
   resolved "https://npm.papegames.com/jsonfile/-/jsonfile-4.0.0.tgz"
   integrity sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
   optionalDependencies:
     graceful-fs "^4.1.6"
+
+jsonparse@^1.2.0:
+  version "1.3.1"
+  resolved "https://npm.papegames.com/jsonparse/-/jsonparse-1.3.1.tgz#3f4dae4a91fac315f71062f8521cc239f1366280"
+  integrity sha1-P02uSpH6wxX3EGL4UhzCOfE2YoA=
 
 jszip@^3.10.1:
   version "3.10.1"
@@ -2661,6 +2930,11 @@ lines-and-columns@^1.1.6:
   resolved "https://npm.papegames.com/lines-and-columns/-/lines-and-columns-1.2.4.tgz"
   integrity sha1-7KKE910pZQeTCdwK2SVauy68FjI=
 
+lines-and-columns@^2.0.3:
+  version "2.0.4"
+  resolved "https://npm.papegames.com/lines-and-columns/-/lines-and-columns-2.0.4.tgz#d00318855905d2660d8c0822e3f5a4715855fc42"
+  integrity sha512-wM1+Z03eypVAVUCE7QdSqpVIvelbOakn1M0bPDoA4SGWPx3sNDVUiMo3L6To6WWGClB7VyXnhQ4Sn7gxiJbE6A==
+
 loader-runner@^4.2.0:
   version "4.3.0"
   resolved "https://npm.papegames.com/loader-runner/-/loader-runner-4.3.0.tgz"
@@ -2679,6 +2953,13 @@ locate-path@^6.0.0:
   integrity sha1-VTIeswn+u8WcSAHZMackUqaB0oY=
   dependencies:
     p-locate "^5.0.0"
+
+locate-path@^7.1.0:
+  version "7.2.0"
+  resolved "https://npm.papegames.com/locate-path/-/locate-path-7.2.0.tgz#69cb1779bd90b35ab1e771e1f2f89a202c2a8a8a"
+  integrity sha512-gvVijfZvn7R+2qyPX8mAuKcFGDf6Nc61GdvGafQsHL0sBIxfKzA+usWn4GFC/bk+QdwPUD4kWFJLhElipq+0VA==
+  dependencies:
+    p-locate "^6.0.0"
 
 lodash.capitalize@^4.2.1:
   version "4.2.1"
@@ -2736,6 +3017,11 @@ lowercase-keys@^3.0.0:
   resolved "https://npm.papegames.com/lowercase-keys/-/lowercase-keys-3.0.0.tgz"
   integrity sha1-xefUQuN+rSR66dsRep0KRnyJ1PI=
 
+lru-cache@^10.0.1:
+  version "10.1.0"
+  resolved "https://npm.papegames.com/lru-cache/-/lru-cache-10.1.0.tgz#2098d41c2dc56500e6c88584aa656c84de7d0484"
+  integrity sha512-/1clY/ui8CzjKFyjdvwPWJUYKiFVXG2I2cY0ssG7h4+hwk+XOIX7ZSG9Q7TW8TW3Kp3BUSqgFWBLgL4PJ+Blag==
+
 lru-cache@^6.0.0:
   version "6.0.0"
   resolved "https://npm.papegames.com/lru-cache/-/lru-cache-6.0.0.tgz"
@@ -2752,6 +3038,11 @@ macos-release@^3.1.0:
   version "3.2.0"
   resolved "https://npm.papegames.com/macos-release/-/macos-release-3.2.0.tgz"
   integrity sha512-fSErXALFNsnowREYZ49XCdOHF8wOPWuFOGQrAhP7x5J/BqQv+B02cNsTykGpDgRVx43EKg++6ANmTaGTtW+hUA==
+
+meow@^12.0.1:
+  version "12.1.1"
+  resolved "https://npm.papegames.com/meow/-/meow-12.1.1.tgz#e558dddbab12477b69b2e9a2728c327f191bace6"
+  integrity sha512-BhXM0Au22RwUneMPwSCnyhTOizdWoIEPU9sp0Aqa1PnDMR5Wv2FGXYDjuzJEIX+Eo2Rb8xuYe5jrnm5QowQFkw==
 
 merge-stream@^2.0.0:
   version "2.0.0"
@@ -2824,7 +3115,7 @@ minimatch@^5.0.1:
   dependencies:
     brace-expansion "^2.0.1"
 
-minimist@^1.2.0:
+minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.8"
   resolved "https://npm.papegames.com/minimist/-/minimist-1.2.8.tgz"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
@@ -2921,6 +3212,16 @@ node-releases@^2.0.13:
   version "2.0.13"
   resolved "https://npm.papegames.com/node-releases/-/node-releases-2.0.13.tgz"
   integrity sha512-uYr7J37ae/ORWdZeQ1xxMJe3NtdmqMC/JZK+geofDrkLUApKRHPd18/TxtBOJ4A0/+uUIliorNrfYV6s1b02eQ==
+
+normalize-package-data@^6.0.0:
+  version "6.0.0"
+  resolved "https://npm.papegames.com/normalize-package-data/-/normalize-package-data-6.0.0.tgz#68a96b3c11edd462af7189c837b6b1064a484196"
+  integrity sha512-UL7ELRVxYBHBgYEtZCXjxuD5vPxnmvMGq0jp/dGPKKrN7tfsBh2IY7TlJ15WWwdjRWD3RJbnsygUurTK3xkPkg==
+  dependencies:
+    hosted-git-info "^7.0.0"
+    is-core-module "^2.8.1"
+    semver "^7.3.5"
+    validate-npm-package-license "^3.0.4"
 
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
@@ -3071,6 +3372,13 @@ p-limit@^3.0.2:
   dependencies:
     yocto-queue "^0.1.0"
 
+p-limit@^4.0.0:
+  version "4.0.0"
+  resolved "https://npm.papegames.com/p-limit/-/p-limit-4.0.0.tgz#914af6544ed32bfa54670b061cafcbd04984b644"
+  integrity sha1-kUr2VE7TK/pUZwsGHK/L0EmEtkQ=
+  dependencies:
+    yocto-queue "^1.0.0"
+
 p-locate@^4.1.0:
   version "4.1.0"
   resolved "https://npm.papegames.com/p-locate/-/p-locate-4.1.0.tgz"
@@ -3084,6 +3392,13 @@ p-locate@^5.0.0:
   integrity sha1-g8gxXGeFAF470CGDlBHJ4RDm2DQ=
   dependencies:
     p-limit "^3.0.2"
+
+p-locate@^6.0.0:
+  version "6.0.0"
+  resolved "https://npm.papegames.com/p-locate/-/p-locate-6.0.0.tgz#3da9a49d4934b901089dca3302fa65dc5a05c04f"
+  integrity sha1-PamknUk0uQEIncozAvpl3FoFwE8=
+  dependencies:
+    p-limit "^4.0.0"
 
 p-try@^2.0.0:
   version "2.2.0"
@@ -3145,6 +3460,17 @@ parse-json@^5.2.0:
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
 
+parse-json@^7.0.0:
+  version "7.1.1"
+  resolved "https://npm.papegames.com/parse-json/-/parse-json-7.1.1.tgz#68f7e6f0edf88c54ab14c00eb700b753b14e2120"
+  integrity sha512-SgOTCX/EZXtZxBE5eJ97P4yGM5n37BwRU+YMsH4vNzFqJV/oWFXXCmwFlgWUM4PrakybVOueJJ6pwHqSVhTFDw==
+  dependencies:
+    "@babel/code-frame" "^7.21.4"
+    error-ex "^1.3.2"
+    json-parse-even-better-errors "^3.0.0"
+    lines-and-columns "^2.0.3"
+    type-fest "^3.8.0"
+
 parse-path@^7.0.0:
   version "7.0.0"
   resolved "https://npm.papegames.com/parse-path/-/parse-path-7.0.0.tgz"
@@ -3163,6 +3489,11 @@ path-exists@^4.0.0:
   version "4.0.0"
   resolved "https://npm.papegames.com/path-exists/-/path-exists-4.0.0.tgz"
   integrity sha1-UTvb4tO5XXdi6METfvoZXGxhtbM=
+
+path-exists@^5.0.0:
+  version "5.0.0"
+  resolved "https://npm.papegames.com/path-exists/-/path-exists-5.0.0.tgz#a6aad9489200b21fab31e49cf09277e5116fb9e7"
+  integrity sha1-pqrZSJIAsh+rMeSc8JJ35RFvuec=
 
 path-is-absolute@^1.0.0:
   version "1.0.1"
@@ -3306,7 +3637,26 @@ rc@1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-readable-stream@^3.4.0:
+read-pkg-up@^10.0.0:
+  version "10.1.0"
+  resolved "https://npm.papegames.com/read-pkg-up/-/read-pkg-up-10.1.0.tgz#2d13ab732d2f05d6e8094167c2112e2ee50644f4"
+  integrity sha512-aNtBq4jR8NawpKJQldrQcSW9y/d+KWH4v24HWkHljOZ7H0av+YTGANBzRh9A5pw7v/bLVsLVPpOhJ7gHNVy8lA==
+  dependencies:
+    find-up "^6.3.0"
+    read-pkg "^8.1.0"
+    type-fest "^4.2.0"
+
+read-pkg@^8.0.0, read-pkg@^8.1.0:
+  version "8.1.0"
+  resolved "https://npm.papegames.com/read-pkg/-/read-pkg-8.1.0.tgz#6cf560b91d90df68bce658527e7e3eee75f7c4c7"
+  integrity sha512-PORM8AgzXeskHO/WEv312k9U03B8K9JSiWF/8N9sUuFjBa+9SF2u6K7VClzXwDXab51jCd8Nd36CNM+zR97ScQ==
+  dependencies:
+    "@types/normalize-package-data" "^2.4.1"
+    normalize-package-data "^6.0.0"
+    parse-json "^7.0.0"
+    type-fest "^4.2.0"
+
+readable-stream@^3.0.2, readable-stream@^3.4.0:
   version "3.6.2"
   resolved "https://npm.papegames.com/readable-stream/-/readable-stream-3.6.2.tgz"
   integrity sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==
@@ -3684,7 +4034,7 @@ source-map-support@~0.5.20:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
 
-source-map@^0.6.0, source-map@~0.6.1:
+source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://npm.papegames.com/source-map/-/source-map-0.6.1.tgz"
   integrity sha1-dHIq8y6WFOnCh6jQu95IteLxomM=
@@ -3693,6 +4043,37 @@ source-map@^0.7.4:
   version "0.7.4"
   resolved "https://npm.papegames.com/source-map/-/source-map-0.7.4.tgz"
   integrity sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==
+
+spdx-correct@^3.0.0:
+  version "3.2.0"
+  resolved "https://npm.papegames.com/spdx-correct/-/spdx-correct-3.2.0.tgz#4f5ab0668f0059e34f9c00dce331784a12de4e9c"
+  integrity sha512-kN9dJbvnySHULIluDHy32WHRUu3Og7B9sbY7tsFLctQkIqnMh3hErYgdMjTYuqmcXX+lK5T1lnUt3G7zNswmZA==
+  dependencies:
+    spdx-expression-parse "^3.0.0"
+    spdx-license-ids "^3.0.0"
+
+spdx-exceptions@^2.1.0:
+  version "2.3.0"
+  resolved "https://npm.papegames.com/spdx-exceptions/-/spdx-exceptions-2.3.0.tgz#3f28ce1a77a00372683eade4a433183527a2163d"
+  integrity sha1-PyjOGnegA3JoPq3kpDMYNSeiFj0=
+
+spdx-expression-parse@^3.0.0:
+  version "3.0.1"
+  resolved "https://npm.papegames.com/spdx-expression-parse/-/spdx-expression-parse-3.0.1.tgz#cf70f50482eefdc98e3ce0a6833e4a53ceeba679"
+  integrity sha1-z3D1BILu/cmOPOCmgz5KU87rpnk=
+  dependencies:
+    spdx-exceptions "^2.1.0"
+    spdx-license-ids "^3.0.0"
+
+spdx-license-ids@^3.0.0:
+  version "3.0.16"
+  resolved "https://npm.papegames.com/spdx-license-ids/-/spdx-license-ids-3.0.16.tgz#a14f64e0954f6e25cc6587bd4f392522db0d998f"
+  integrity sha512-eWN+LnM3GR6gPu35WxNgbGl8rmY1AEmoMDvL/QD6zYmPWgywxWqJWNdLGT+ke8dKNWrcYgYjPpG5gbTfghP8rw==
+
+split2@^4.0.0:
+  version "4.2.0"
+  resolved "https://npm.papegames.com/split2/-/split2-4.2.0.tgz#c9c5920904d148bab0b9f67145f245a86aadbfa4"
+  integrity sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==
 
 ssf@~0.11.2:
   version "0.11.2"
@@ -3862,10 +4243,20 @@ terser@^5.16.8:
     commander "^2.20.0"
     source-map-support "~0.5.20"
 
+text-extensions@^2.0.0:
+  version "2.4.0"
+  resolved "https://npm.papegames.com/text-extensions/-/text-extensions-2.4.0.tgz#a1cfcc50cf34da41bfd047cc744f804d1680ea34"
+  integrity sha1-oc/MUM802kG/0EfMdE+ATRaA6jQ=
+
 text-table@^0.2.0:
   version "0.2.0"
   resolved "https://npm.papegames.com/text-table/-/text-table-0.2.0.tgz"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
+
+"through@>=2.2.7 <3":
+  version "2.3.8"
+  resolved "https://npm.papegames.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
+  integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
 
 titleize@^3.0.0:
   version "3.0.0"
@@ -3941,6 +4332,16 @@ type-fest@^2.13.0, type-fest@^2.5.1:
   resolved "https://npm.papegames.com/type-fest/-/type-fest-2.19.0.tgz"
   integrity sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==
 
+type-fest@^3.8.0:
+  version "3.13.1"
+  resolved "https://npm.papegames.com/type-fest/-/type-fest-3.13.1.tgz#bb744c1f0678bea7543a2d1ec24e83e68e8c8706"
+  integrity sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==
+
+type-fest@^4.2.0:
+  version "4.8.2"
+  resolved "https://npm.papegames.com/type-fest/-/type-fest-4.8.2.tgz#20d4cc287745723dbabf925de644eeb7de0349c1"
+  integrity sha512-mcvrCjixA5166hSrUoJgGb9gBQN4loMYyj9zxuMs/66ibHNEFd5JXMw37YVDx58L4/QID9jIzdTBB4mDwDJ6KQ==
+
 typed-array-buffer@^1.0.0:
   version "1.0.0"
   resolved "https://npm.papegames.com/typed-array-buffer/-/typed-array-buffer-1.0.0.tgz"
@@ -3987,10 +4388,20 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
+typedarray@^0.0.6:
+  version "0.0.6"
+  resolved "https://npm.papegames.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+  integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
 typescript@^5.1.3:
   version "5.2.2"
   resolved "https://npm.papegames.com/typescript/-/typescript-5.2.2.tgz"
   integrity sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==
+
+uglify-js@^3.1.4:
+  version "3.17.4"
+  resolved "https://npm.papegames.com/uglify-js/-/uglify-js-3.17.4.tgz#61678cf5fa3f5b7eb789bb345df29afb8257c22c"
+  integrity sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==
 
 unbox-primitive@^1.0.2:
   version "1.0.2"
@@ -4071,6 +4482,14 @@ util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://npm.papegames.com/util-deprecate/-/util-deprecate-1.0.2.tgz"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
+
+validate-npm-package-license@^3.0.4:
+  version "3.0.4"
+  resolved "https://npm.papegames.com/validate-npm-package-license/-/validate-npm-package-license-3.0.4.tgz#fc91f6b9c7ba15c857f4cb2c5defeec39d4f410a"
+  integrity sha1-/JH2uce6FchX9MssXe/uw51PQQo=
+  dependencies:
+    spdx-correct "^3.0.0"
+    spdx-expression-parse "^3.0.0"
 
 watchpack@^2.4.0:
   version "2.4.0"
@@ -4218,6 +4637,11 @@ word@~0.3.0:
   resolved "https://npm.papegames.com/word/-/word-0.3.0.tgz#8542157e4f8e849f4a363a288992d47612db9961"
   integrity sha1-hUIVfk+OhJ9KNjooiZLUdhLbmWE=
 
+wordwrap@^1.0.0:
+  version "1.0.0"
+  resolved "https://npm.papegames.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
+  integrity sha1-J1hIEIkUVqQXHI0CJkQa3pDLyus=
+
 workerpool@6.2.1:
   version "6.2.1"
   resolved "https://npm.papegames.com/workerpool/-/workerpool-6.2.1.tgz"
@@ -4330,3 +4754,8 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://npm.papegames.com/yocto-queue/-/yocto-queue-0.1.0.tgz"
   integrity sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=
+
+yocto-queue@^1.0.0:
+  version "1.0.0"
+  resolved "https://npm.papegames.com/yocto-queue/-/yocto-queue-1.0.0.tgz#7f816433fb2cbc511ec8bf7d263c3b58a1a3c251"
+  integrity sha1-f4FkM/ssvFEeyL99Jjw7WKGjwlE=
