@@ -18,15 +18,15 @@ export const defaultLang = "zh-CN";
 export const getInitConstants = async (document: vscode.Uri) => {
   const packageConfig = await getPackage(document);
   const _xlsxTransformPath =
-    packageConfig?.xlsxDefaultLan ||
+    packageConfig?.xlsxTransformPath ||
     vscode.workspace.getConfiguration().get("xlsxTransformPath") ||
     defaultXlsxTransformPath;
   const _xlsxTransformType =
-    packageConfig?.xlsxTransformPath ||
+    packageConfig?.xlsxTransformType ||
     vscode.workspace.getConfiguration().get("xlsxTransformType") ||
     defaultXlsxTransformLanauges;
   const _xlsxDefaultLang =
-    packageConfig?.xlsxTransformType ||
+    packageConfig?.xlsxDefaultLan ||
     vscode.workspace.getConfiguration().get("xlsxDefaultLan") ||
     defaultLang;
 

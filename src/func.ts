@@ -47,7 +47,7 @@ export const funcs = {
           const startWith = xlsxTransformPath.startsWith("/");
           const endWith = xlsxTransformPath.endsWith("/");
           const fidlesPath = startWith
-            ? "xlsxTransformPath"
+            ? xlsxTransformPath
             : `/${xlsxTransformPath}`;
           return `${activeWork}${fidlesPath}${
             endWith ? "" : "/"
