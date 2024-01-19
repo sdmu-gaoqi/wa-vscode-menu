@@ -1,23 +1,86 @@
-# XlsxToTs
+# wa-menus
+
+右键扩展
 
 ---
 
-#### xlsx 文件自动转换 ts 语言配置
+功能整理
 
-#### 插件配置
+- xlsxToTs xlsx文件转lang配置文件
+- createRfc 生成rfc组件
+- createVue 生成vue组件
+- createClass 生成class
 
-##### xlsxPath
+## 插件配置
 
-插件生效的 csv 文件路径 比如 项目跟路径/src/locales/csv.csv 输入 /src/locales/csv.csv
-默认值 /src/locales/locales.csv
+#### xlsxToTs
 
-##### xlsxTransformPath
+1. xlsxDefaultLan
+   xlsx首选默认语言 其他语言空值时使用默认语言进行填充
 
-转换保存的文件路径 没有的话自动创建路径
-默认值 /src/locales
+   例(xlsx内容)
+   | key | zh-CN | en |
+   | ------- | ----- | --- |
+   | message | 你好 | |
 
-##### xlsxTransformLanauges
+   生成结果
 
-插件需要转换的语言表集合
-默认值 ["zh-CN", "zh-TW", "en-US", "ja-JP", "ko-KR"]
-生成的文件已这里的值作为文件名 比如 zh-CN.ts
+   ```typescript
+   // zh-CN.ts
+   export default {
+     message: "你好",
+   };
+   // en.ts
+   export default {
+     message: "你好",
+   };
+   ```
+
+2. xlsxTransformPath
+
+   转换保存的文件路径 没有的话自动创建路径
+   默认值 /src/locales
+   以默认值为例 生成目录为
+
+   ```
+   ├── src
+   │   ├── locales
+   │   │     ├──zh-CN.ts
+   │   │     └──en.ts
+   ```
+
+3. xlsxTransformType
+   转换文件(类型｜后缀)
+   目前仅支持 ts or js
+   默认值ts
+   以xlsxTransformPath案例
+   改为js 生成的是zh-CN.js
+
+取值规则
+
+```typescript
+/**
+ * package.json
+ * {
+ * "config": {
+ *    "wa-menus": {
+ *       "xlsxDefaultLan": "",
+ *       "xlsxTransformPath": "",
+ *       "xlsxTransformType": ""
+ *       }
+ *    }
+ * }
+ * 大于
+ * 设置->扩展
+ * */
+```
+
+# todo
+
+## 已知bug
+
+xlsx内容第二行 第一行的内容区
+所有的语言必须都补充上
+xlsx会在读取时忽略掉第一行是空值的列
+
+插件的开启在xlsx文件时无法开启 需要切到ts or js or json文件后再点击xlsx右键生效

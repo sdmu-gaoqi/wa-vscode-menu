@@ -17,7 +17,7 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "wa-xlsx-to-ts(目标xlsx文件保存自动生成langules.ts文件)",
+      "title": "wa-menus(右键扩展插件)",
       "properties": {
         "xlsxDefaultLan": {
           "type": "string",

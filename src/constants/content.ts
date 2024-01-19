@@ -1,3 +1,6 @@
+import { readFileSync } from "fs";
+import * as vscode from "vscode";
+
 export const tsxContent = (componentName: string) => {
   let typeName: any = `${componentName}Props`;
   typeName = typeName.split("");
@@ -85,4 +88,17 @@ export const classContent = (className: string) => {
 
     export default ${className}
     `;
+};
+
+export const getPackage = async (document: vscode.Uri) => {
+  const activeWork = vscode.workspace.getWorkspaceFolder(document)?.uri.path;
+  const packageData = JSON.parse(
+    await readFileSync(`${activeWork}/package.json`, "utf-8")
+  );
+  const pageageConfig = packageData?.config || {};
+  return {
+    xlsxDefaultLan: pageageConfig["wa-menus"]?.xlsxDefaultLan,
+    xlsxTransformPath: pageageConfig["wa-menus"]?.xlsxTransformPath,
+    xlsxTransformType: pageageConfig["wa-menus"]?.xlsxTransformType,
+  };
 };

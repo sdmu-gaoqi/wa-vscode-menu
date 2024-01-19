@@ -19,7 +19,8 @@ export const funcs = {
       //   const pathFile = await vscode.workspace.openTextDocument(document.fsPath);
       (global as any).xlsx = xlsx;
       (global as any).pathFile = document;
-      const { xlsxTransformPath, xlsxTransformType } = getInitConstants();
+      const { xlsxTransformPath, xlsxTransformType, defaultLang } =
+        await getInitConstants(document);
       const data = fs.readFileSync(document.fsPath).buffer;
       const file = xlsx.read(data);
       const l10n: Record<string, Record<string, string>> = {};
@@ -35,7 +36,8 @@ export const funcs = {
             if (!l10n[field]) {
               l10n[field] = {};
             }
-            l10n[field][word.key] = String(word[field || "zh-CN"]) || "";
+            l10n[field][word.key] =
+              String(word[field] || word[defaultLang]) || "";
           }
         });
         const activeWork =
