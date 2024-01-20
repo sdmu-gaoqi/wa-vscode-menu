@@ -102,7 +102,7 @@ export const funcs = {
       useCache: false,
     });
 
-    const filePath = `${document.path}/${fileName}`;
+    const filePath = `${document.fsPath}/${fileName}`;
     prettier
       .format(fileContent, { ...config, semi: false, filepath: filePath })
       .then((res) => {
@@ -137,7 +137,7 @@ export const funcs = {
       useCache: false,
     });
 
-    const filePath = `${document.path}/${fileName}`;
+    const filePath = `${document.fsPath}/${fileName}`;
     fs.writeFileSync(filePath, fileContent, "utf8");
   },
   // 生成class
@@ -165,7 +165,7 @@ export const funcs = {
       useCache: false,
     });
 
-    const filePath = `${document.path}/${fileName}`;
+    const filePath = `${document.fsPath}/${fileName}`;
     prettier
       .format(fileContent, {
         ...config,
