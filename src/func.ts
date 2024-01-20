@@ -41,7 +41,7 @@ export const funcs = {
           }
         });
         const activeWork =
-          vscode.workspace.getWorkspaceFolder(document)?.uri.path;
+          vscode.workspace.getWorkspaceFolder(document)?.uri.fsPath;
 
         const getLangTsPath = (key: string) => {
           const startWith = xlsxTransformPath.startsWith("/");
@@ -70,6 +70,7 @@ export const funcs = {
         vscode.window.showInformationMessage("文件转换完成");
       }
     } catch (err) {
+      console.log(err, "errerrerrerrerrerr");
       vscode.window.showErrorMessage("文件转换失败", JSON.stringify(err));
     }
   },

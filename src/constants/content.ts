@@ -91,10 +91,11 @@ export const classContent = (className: string) => {
 };
 
 export const getPackage = async (document: vscode.Uri) => {
-  const activeWork = vscode.workspace.getWorkspaceFolder(document)?.uri.path;
-  const packageData = JSON.parse(
-    await readFileSync(`${activeWork}/package.json`, "utf-8")
-  );
+  const activeWork = vscode.workspace.getWorkspaceFolder(document)?.uri.fsPath;
+  (global as any).readFileSync = readFileSync;
+  // const pathStr = `${activeWork}/package.json`?.replace(/\//g, "/");
+  const pathStr = `${activeWork}/package.json`;
+  const packageData = JSON.parse(await readFileSync(pathStr, "utf-8"));
   const pageageConfig = packageData?.config || {};
   return {
     xlsxDefaultLan: pageageConfig["wa-menus"]?.xlsxDefaultLan,
