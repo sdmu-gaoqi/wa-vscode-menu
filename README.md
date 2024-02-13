@@ -13,6 +13,8 @@
 
 ## 插件配置
 
+![image](img/xlsx.png)
+
 #### xlsxToTs
 
 1. xlsxDefaultLan
