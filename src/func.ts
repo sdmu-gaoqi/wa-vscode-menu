@@ -3,6 +3,8 @@ import * as vscode from "vscode";
 import * as xlsx from "xlsx";
 import * as fs from "fs";
 import * as prettier from "prettier";
+import * as md5 from "md5";
+import axios from "axios";
 import { getInitConstants } from "./initConstants";
 import {
   classContent,
@@ -12,6 +14,62 @@ import {
   vueTsxContent,
 } from "./constants/content";
 
+const baseAxios = axios.create({});
+
+export const getTranslateLan = (lan: string) => {
+  const lanStr = lan.toLocaleLowerCase();
+  switch (lanStr) {
+    case "zh":
+    case "zh-cn":
+      return "zh";
+    case "en":
+    case "en-us":
+      return "en";
+    case "ja":
+    case "ja-jp":
+      return "jp";
+    case "ko":
+    case "kr":
+    case "ko-kr":
+      return "kor";
+    case "zh-tw":
+    case "zh-cnt":
+    case "zh-cht":
+      return "cht";
+    default:
+      return "en";
+  }
+};
+
+export const translateServer = async ({
+  content,
+  lan,
+  translate,
+  document,
+}: {
+  content: string;
+  lan: string;
+  translate: boolean;
+  document: vscode.Uri;
+}) => {
+  if (!translate) {
+    return "";
+  }
+  const { defaultLang, baiduAppid, baiduKey } =
+    await getInitConstants(document);
+  const translateLan = getTranslateLan(lan);
+  const fromLan = getTranslateLan(defaultLang);
+  const salt = +new Date();
+  const sign = md5(`${baiduAppid}${content}${salt}${baiduKey}`);
+  const url = `http://api.fanyi.baidu.com/api/trans/vip/translate?q=${content}&from=${fromLan}&to=${translateLan}&appid=${baiduAppid}&salt=${salt}&sign=${sign}`;
+
+  const data = await baseAxios.request({
+    url,
+  });
+
+  return data?.data?.trans_result?.[0]?.dst;
+};
+
 export const funcs = {
   // xlsx转ts
   xlsxToTs: async (document: vscode.Uri) => {
@@ -19,8 +77,16 @@ export const funcs = {
       //   const pathFile = await vscode.workspace.openTextDocument(document.fsPath);
       (global as any).xlsx = xlsx;
       (global as any).pathFile = document;
-      const { xlsxTransformPath, xlsxTransformType, defaultLang } =
-        await getInitConstants(document);
+      const {
+        xlsxTransformPath,
+        xlsxTransformType,
+        defaultLang,
+        autoTranslate,
+        baiduAppid,
+        baiduKey,
+      } = await getInitConstants(document);
+      const translate =
+        Boolean(autoTranslate) && Boolean(baiduAppid) && Boolean(baiduKey);
       const data = fs.readFileSync(document.fsPath).buffer;
       const file = xlsx.read(data);
       const l10n: Record<string, Record<string, string>> = {};
@@ -28,47 +94,62 @@ export const funcs = {
         const sheetData: any = xlsx.utils.sheet_to_json(file.Sheets[sheetName]);
         const fields = Object.keys(sheetData[0]);
 
-        // 获取到xlsx里的数据转成Object格式
-        sheetData.forEach((word: Record<string, string>) => {
-          // 0 是 key
-          for (let index = 1; index < fields.length; index++) {
-            const field = fields[index];
-            if (!l10n[field]) {
-              l10n[field] = {};
+        await Promise.all(
+          sheetData.map(async (word: Record<string, string>) => {
+            // 0是key
+            for (let index = 1; index < fields.length; index++) {
+              const field = fields[index];
+              if (!l10n[field]) {
+                l10n[field] = {};
+              }
+              if (word[field]) {
+                l10n[field][word.key] = word[field];
+              } else {
+                try {
+                  const result =
+                    (await translateServer({
+                      content: word[defaultLang],
+                      lan: field,
+                      translate,
+                      document,
+                    })) || word[defaultLang];
+                  l10n[field][word.key] = result || "";
+                } catch (err) {
+                  l10n[field][word.key] = word[defaultLang] || "";
+                }
+              }
             }
-            l10n[field][word.key] =
-              String(word[field] || word[defaultLang]) || "";
-          }
-        });
-        const activeWork =
-          vscode.workspace.getWorkspaceFolder(document)?.uri.fsPath;
-
-        const getLangTsPath = (key: string) => {
-          const startWith = xlsxTransformPath.startsWith("/");
-          const endWith = xlsxTransformPath.endsWith("/");
-          const fidlesPath = startWith
-            ? xlsxTransformPath
-            : `/${xlsxTransformPath}`;
-          return `${activeWork}${fidlesPath}${
-            endWith ? "" : "/"
-          }${key}.${xlsxTransformType}`;
-        };
-
-        const config = await prettier.resolveConfig("path/to/file", {
-          useCache: false,
-        });
-        // 将Object转成ts
-        Object.keys(l10n).forEach((key: string) => {
-          const str = `export default ${JSON.stringify(l10n[key], null, 2)}\n`;
-          const filePath = getLangTsPath(key);
-          prettier
-            .format(str, { ...config, semi: false, filepath: filePath })
-            .then((res: string) => {
-              fs.writeFileSync(filePath, res, "utf8");
-            });
-        });
-        vscode.window.showInformationMessage("文件转换完成");
+          })
+        );
       }
+      const activeWork =
+        vscode.workspace.getWorkspaceFolder(document)?.uri.fsPath;
+
+      const getLangTsPath = (key: string) => {
+        const startWith = xlsxTransformPath.startsWith("/");
+        const endWith = xlsxTransformPath.endsWith("/");
+        const fidlesPath = startWith
+          ? xlsxTransformPath
+          : `/${xlsxTransformPath}`;
+        return `${activeWork}${fidlesPath}${
+          endWith ? "" : "/"
+        }${key}.${xlsxTransformType}`;
+      };
+
+      const config = await prettier.resolveConfig("path/to/file", {
+        useCache: false,
+      });
+      // 将Object转成ts
+      Object.keys(l10n).forEach((key: string) => {
+        const str = `export default ${JSON.stringify(l10n[key], null, 2)}\n`;
+        const filePath = getLangTsPath(key);
+        prettier
+          .format(str, { ...config, semi: false, filepath: filePath })
+          .then((res: string) => {
+            fs.writeFileSync(filePath, res, "utf8");
+          });
+      });
+      vscode.window.showInformationMessage("文件转换完成");
     } catch (err) {
       console.log(err, "errerrerrerrerrerr");
       vscode.window.showErrorMessage("文件转换失败", JSON.stringify(err));

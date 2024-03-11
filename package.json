@@ -33,6 +33,21 @@
           "type": "string",
           "default": "ts",
           "description": "转换的文件类型(ts or js)"
+        },
+        "autoTranslate": {
+          "type": "boolean",
+          "default": "true",
+          "description": "是否自动翻译（需要配置正确的baiduAppid和baiduKey）"
+        },
+        "baiduAppid": {
+          "type": "string",
+          "default": "",
+          "description": "百度翻译appid"
+        },
+        "baiduKey": {
+          "type": "string",
+          "default": "",
+          "description": "百度翻译唯一key"
         }
       }
     },
@@ -129,7 +144,10 @@
   },
   "dependencies": {
     "@release-it/conventional-changelog": "^8.0.1",
+    "@types/md5": "^2.3.5",
+    "axios": "^1.6.7",
     "fs": "^0.0.1-security",
+    "md5": "^2.3.0",
     "prettier": "^3.1.0",
     "xlsx": "^0.18.5"
   },
