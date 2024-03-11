@@ -6,7 +6,7 @@
 
 功能整理
 
-- xlsxToTs xlsx文件转lang配置文件
+- xlsxToTs xlsx文件转lang配置文件 并自动翻译(目前仅支持 中、英、繁、韩、日)
 - createRfc 生成rfc组件
 - createVue 生成vue组件
 - createClass 生成class
@@ -58,7 +58,15 @@
    以xlsxTransformPath案例
    改为js 生成的是zh-CN.js
 
-取值规则
+4. autoTranslate
+   是否需要自动翻译
+
+5. baiduAppid
+   百度翻译api appId
+
+6. baiduKey
+   百度翻译api appKey
+   取值规则
 
 ```typescript
 /**
