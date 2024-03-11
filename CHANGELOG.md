@@ -1,5 +1,23 @@
 
 
+# [2.0.0](https://github.com/sdmu-gaoqi/wa-vscode-menu/compare/1.0.1...2.0.0) (2024-03-11)
+
+
+### Bug Fixes
+
+* 参数取值bug修复 ([87e1e2c](https://github.com/sdmu-gaoqi/wa-vscode-menu/commit/87e1e2c1e5726dc2e8de2e15b96e8a82741144ec))
+
+
+### Features
+
+* 🎸 能力扩展 ([886c67c](https://github.com/sdmu-gaoqi/wa-vscode-menu/commit/886c67ca26c5f2db5a0733abe3618ddd1a10eae1))
+* 修改文档说明 ([426c8f0](https://github.com/sdmu-gaoqi/wa-vscode-menu/commit/426c8f070f2457afb588d4261e7a0fa09f2b8177))
+
+
+### BREAKING CHANGES
+
+* 🧨 xlsx转多语言配置时支持调用百度翻译api
+
 ## [1.0.1](https://github.com/sdmu-gaoqi/wa-csvToTs/compare/1.0.0...1.0.1) (2023-11-28)
 
 
