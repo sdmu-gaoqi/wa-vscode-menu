@@ -1,5 +1,17 @@
 
 
+## [2.0.1](https://github.com/sdmu-gaoqi/wa-vscode-menu/compare/2.0.0...2.0.1) (2024-03-11)
+
+
+### chore
+
+* 🤖 补充文档说明 ([c58c2d5](https://github.com/sdmu-gaoqi/wa-vscode-menu/commit/c58c2d52f4072babe090c2fe8edec4c18d148791))
+
+
+### BREAKING CHANGES
+
+* 🧨 文档说明补充 支持自动翻译
+
 # [2.0.0](https://github.com/sdmu-gaoqi/wa-vscode-menu/compare/1.0.1...2.0.0) (2024-03-11)
 
 
