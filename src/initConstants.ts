@@ -1,3 +1,7 @@
+/**
+ * @file 获取插件配置
+ * */
+
 import * as vscode from "vscode";
 import { getPackage } from "./constants/content";
 

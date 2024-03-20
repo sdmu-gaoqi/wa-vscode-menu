@@ -1,3 +1,7 @@
+/**
+ * @file 指令实际实现
+ * */
+
 import path = require("path");
 import * as vscode from "vscode";
 import * as xlsx from "xlsx";
@@ -16,6 +20,7 @@ import {
 
 const baseAxios = axios.create({});
 
+// 获取百度api翻译语言
 export const getTranslateLan = (lan: string) => {
   const lanStr = lan.toLocaleLowerCase();
   switch (lanStr) {
@@ -41,6 +46,7 @@ export const getTranslateLan = (lan: string) => {
   }
 };
 
+// api翻译
 export const translateServer = async ({
   content,
   lan,
@@ -70,7 +76,7 @@ export const translateServer = async ({
   return data?.data?.trans_result?.[0]?.dst;
 };
 
-export const funcs = {
+export const functions = {
   // xlsx转ts
   xlsxToTs: async (document: vscode.Uri) => {
     try {
