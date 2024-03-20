@@ -16,4 +16,5 @@ export const commands = [
     value: "createClass",
     func: functions.createClass,
   },
+  { key: "extension.translate", value: "translate", func: functions.translate },
 ];

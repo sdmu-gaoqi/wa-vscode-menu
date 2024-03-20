@@ -103,3 +103,11 @@ export const getPackage = async (document: vscode.Uri) => {
     xlsxTransformType: pageageConfig["wa-menus"]?.xlsxTransformType,
   };
 };
+
+export const baiduLangs = [
+  { label: "中文", command: "zh" },
+  { label: "英语", command: "en" },
+  { label: "日语", command: "jp" },
+  { label: "韩语	", command: "kor" },
+  { label: "繁体中文", command: "cht" },
+];

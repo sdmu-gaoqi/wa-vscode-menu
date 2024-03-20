@@ -11,12 +11,14 @@ import * as md5 from "md5";
 import axios from "axios";
 import { getInitConstants } from "./initConstants";
 import {
+  baiduLangs,
   classContent,
   jsxContent,
   tsxContent,
   vueTemplateContent,
   vueTsxContent,
 } from "./constants/content";
+import { channel } from "./utils";
 
 const baseAxios = axios.create({});
 
@@ -52,22 +54,34 @@ export const translateServer = async ({
   lan,
   translate,
   document,
+  toLang,
+  fromLang,
+  config,
 }: {
   content: string;
   lan: string;
   translate: boolean;
   document: vscode.Uri;
+  toLang?: string;
+  fromLang?: string;
+  config?: {
+    defaultLang: string;
+    baiduAppid: string;
+    baiduKey: string;
+  };
 }) => {
   if (!translate) {
     return "";
   }
-  const { defaultLang, baiduAppid, baiduKey } =
-    await getInitConstants(document);
-  const translateLan = getTranslateLan(lan);
-  const fromLan = getTranslateLan(defaultLang);
+  const { defaultLang, baiduAppid, baiduKey } = config
+    ? config
+    : await getInitConstants(document);
+  const translateLan = toLang ? toLang : getTranslateLan(lan);
+  const oldLang =
+    typeof fromLang === "string" ? fromLang : getTranslateLan(defaultLang);
   const salt = +new Date();
   const sign = md5(`${baiduAppid}${content}${salt}${baiduKey}`);
-  const url = `http://api.fanyi.baidu.com/api/trans/vip/translate?q=${content}&from=${fromLan}&to=${translateLan}&appid=${baiduAppid}&salt=${salt}&sign=${sign}`;
+  const url = `http://api.fanyi.baidu.com/api/trans/vip/translate?q=${content}&from=${oldLang}&to=${translateLan}&appid=${baiduAppid}&salt=${salt}&sign=${sign}`;
 
   const data = await baseAxios.request({
     url,
@@ -262,5 +276,46 @@ export const functions = {
       .then((res) => {
         fs.writeFileSync(filePath, res, "utf8");
       });
+  },
+  // 翻译
+  translate: async (document: vscode.Uri) => {
+    const config = {
+      defaultLang: "",
+      baiduAppid: (vscode.workspace.getConfiguration().get("baiduAppid") ||
+        "") as string,
+      baiduKey: (vscode.workspace.getConfiguration().get("baiduKey") ||
+        "") as string,
+    };
+    // 弹出vscode选择框
+    const oldLang = await vscode.window.showQuickPick(baiduLangs, {
+      placeHolder: "请选择当前语言",
+    });
+    // 弹出vscode输入框
+    const content = await vscode.window.showInputBox({
+      prompt: "请输入需要翻译的内容",
+      value: "",
+    });
+    // 弹出vscode选择框
+    const data = await vscode.window.showQuickPick(baiduLangs, {
+      placeHolder: "请选择需要翻译语言",
+    });
+    if (!content || !data?.command) {
+      return;
+    }
+    try {
+      const result = await translateServer({
+        content,
+        lan: data?.command,
+        toLang: data?.command,
+        fromLang: oldLang?.command,
+        translate: true,
+        document,
+        config,
+      });
+      channel.log("本次翻译结果：");
+      channel.log(result);
+    } catch (err) {
+      console.log(err, "csvToTs");
+    }
   },
 };

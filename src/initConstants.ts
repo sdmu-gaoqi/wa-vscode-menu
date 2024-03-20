@@ -29,15 +29,15 @@ export const getInitConstants = async (document: vscode.Uri) => {
     packageConfig?.xlsxTransformType ||
     vscode.workspace.getConfiguration().get("xlsxTransformType") ||
     defaultXlsxTransformLanauges;
-  const _xlsxDefaultLang =
-    packageConfig?.xlsxDefaultLan ||
+  const _xlsxDefaultLang = (packageConfig?.xlsxDefaultLan ||
     vscode.workspace.getConfiguration().get("xlsxDefaultLan") ||
-    defaultLang;
+    defaultLang) as string;
   const autoTranslate =
     vscode.workspace.getConfiguration().get("autoTranslate") || false;
-  const baiduAppid =
-    vscode.workspace.getConfiguration().get("baiduAppid") || false;
-  const baiduKey = vscode.workspace.getConfiguration().get("baiduKey") || false;
+  const baiduAppid = (vscode.workspace.getConfiguration().get("baiduAppid") ||
+    "") as string;
+  const baiduKey = (vscode.workspace.getConfiguration().get("baiduKey") ||
+    "") as string;
 
   return {
     xlsxTransformPath: _xlsxTransformPath as string,

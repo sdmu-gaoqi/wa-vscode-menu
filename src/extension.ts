@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import Extension from "./register";
+import "./utils";
 
 // registerCommands注册命令
 export function activate(context: vscode.ExtensionContext) {
