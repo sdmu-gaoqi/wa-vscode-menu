@@ -1,5 +1,17 @@
 
 
+# [2.1.0](https://github.com/sdmu-gaoqi/wa-vscode-menu/compare/2.0.1...2.1.0) (2024-03-20)
+
+
+### chore
+
+* 🤖 升级版本 添加翻译能力 ([26b96a2](https://github.com/sdmu-gaoqi/wa-vscode-menu/commit/26b96a25a92a07c57ed3afab6c1f5e487e32b925))
+
+
+### BREAKING CHANGES
+
+* 🧨 新增ctrl + t >翻译 命令
+
 ## [2.0.1](https://github.com/sdmu-gaoqi/wa-vscode-menu/compare/2.0.0...2.0.1) (2024-03-11)
 
 
