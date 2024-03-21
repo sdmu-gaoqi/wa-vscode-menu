@@ -1,5 +1,17 @@
 
 
+# [2.2.0](https://github.com/sdmu-gaoqi/wa-vscode-menu/compare/2.1.0...2.2.0) (2024-03-21)
+
+
+### chore
+
+* 🤖 优化输出内容展示 ([1855fde](https://github.com/sdmu-gaoqi/wa-vscode-menu/commit/1855fdedb9038d23ab6936a81c3ca5360080d93d))
+
+
+### BREAKING CHANGES
+
+* 🧨 分行展示 翻译指令结果 使用分割线划分 方便预览
+
 # [2.1.0](https://github.com/sdmu-gaoqi/wa-vscode-menu/compare/2.0.1...2.1.0) (2024-03-20)
 
 
