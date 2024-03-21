@@ -312,8 +312,11 @@ export const functions = {
         document,
         config,
       });
+      channel.log("本次翻译内容：");
+      channel.log(content);
       channel.log("本次翻译结果：");
       channel.log(result);
+      channel.log("--------------------------");
     } catch (err) {
       console.log(err, "csvToTs");
     }
