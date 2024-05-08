@@ -51,6 +51,27 @@
         }
       }
     },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "wa-sideMenus",
+          "title": "侧边工具栏",
+          "icon": "img/avatar.png"
+        }
+      ]
+    },
+    "views": {
+      "wa-sideMenus": [
+        {
+          "id": "wa-translate",
+          "name": "翻译"
+        },
+        {
+          "id": "none",
+          "name": "还不知道是啥"
+        }
+      ]
+    },
     "menus": {
       "explorer/context": [
         {
@@ -109,8 +130,8 @@
         "title": "生成一个类"
       },
       {
-        "command": "extension.translate",
-        "title": "翻译"
+        "command": "extension.sideMenus",
+        "title": "侧边菜单"
       }
     ]
   },

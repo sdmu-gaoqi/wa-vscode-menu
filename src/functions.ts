@@ -277,8 +277,9 @@ export const functions = {
         fs.writeFileSync(filePath, res, "utf8");
       });
   },
-  // 翻译
-  translate: async (document: vscode.Uri) => {
+
+  // 侧边菜单
+  sideMenus: async (document: vscode.Uri) => {
     const config = {
       defaultLang: "",
       baiduAppid: (vscode.workspace.getConfiguration().get("baiduAppid") ||
