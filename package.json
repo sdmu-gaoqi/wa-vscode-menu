@@ -63,7 +63,7 @@
     "views": {
       "wa-sideMenus": [
         {
-          "id": "wa-translate",
+          "id": "wa-sideMenus",
           "name": "翻译"
         },
         {
