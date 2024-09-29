@@ -43,10 +43,12 @@
     "views": {
       "wa-sideMenus": [
         {
+          "type": "webview",
           "id": "wa-translate",
           "name": "翻译"
         },
         {
+          "type": "webview",
           "id": "wa-aes-decrypt",
           "name": "aes解密"
         }
@@ -92,13 +94,11 @@
     "webpack-cli": "^5.1.1"
   },
   "dependencies": {
-    "@adyen/adyen-web": "^6.1.1",
     "@release-it/conventional-changelog": "^8.0.1",
-    "@types/md5": "^2.3.5",
     "axios": "^1.6.7",
     "fs": "^0.0.1-security",
-    "md5": "^2.3.0",
-    "prettier": "^3.1.0"
+    "prettier": "^3.1.0",
+    "vue": "^3.5.10"
   },
   "repository": {
     "type": "git",

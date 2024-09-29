@@ -1,34 +1,23 @@
 import * as vscode from "vscode";
-import SideMenusService from "./provider/waSideMenus";
 import { ChatWebview } from "./webviews/translate";
+import { log } from "./utils/log";
 
 export default class Extension {
   constructor() {}
 
   public registerCommands(context: vscode.ExtensionContext): void {
+    log("registerCommands");
     context.subscriptions.push(
-      vscode.window.createTreeView("wa-translate", {
-        showCollapseAll: true,
-        treeDataProvider: new SideMenusService("wa-translate"),
-      })
+      vscode.window.registerWebviewViewProvider(
+        "wa-translate",
+        new ChatWebview(context)
+      )
     );
-    vscode.window.registerWebviewViewProvider(
-      "wa-translate",
-      new ChatWebview(),
-      {
-        webviewOptions: {
-          retainContextWhenHidden: false,
-        },
-      }
-    ),
+    context.subscriptions.push(
       vscode.window.registerWebviewViewProvider(
         "wa-aes-decrypt",
-        new ChatWebview(),
-        {
-          webviewOptions: {
-            retainContextWhenHidden: true,
-          },
-        }
-      );
+        new ChatWebview(context)
+      )
+    );
   }
 }
