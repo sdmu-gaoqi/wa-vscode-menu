@@ -1,6 +1,6 @@
 {
-  "name": "wa-menus",
-  "displayName": "wa-menus",
+  "name": "wa-toolkit",
+  "displayName": "wa-toolkit",
   "description": "vscode菜单扩展",
   "icon": "img/avatar.png",
   "version": "2.2.0",
@@ -17,34 +17,14 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "wa-menus(右键扩展插件)",
+      "title": "wa-toolkit(窗口工具)",
       "properties": {
-        "xlsxDefaultLan": {
-          "type": "string",
-          "default": "zh-CN",
-          "description": "首选默认语言"
-        },
-        "xlsxTransformPath": {
-          "type": "string",
-          "default": "src/locales",
-          "description": "转换的文件输出地址"
-        },
-        "xlsxTransformType": {
-          "type": "string",
-          "default": "ts",
-          "description": "转换的文件类型(ts or js)"
-        },
-        "autoTranslate": {
-          "type": "boolean",
-          "default": "true",
-          "description": "是否自动翻译（需要配置正确的baiduAppid和baiduKey）"
-        },
-        "baiduAppid": {
+        "windowBaiduAppid": {
           "type": "string",
           "default": "",
           "description": "百度翻译appid"
         },
-        "baiduKey": {
+        "windowBaiduKey": {
           "type": "string",
           "default": "",
           "description": "百度翻译唯一key"
@@ -63,77 +43,21 @@
     "views": {
       "wa-sideMenus": [
         {
-          "id": "wa-sideMenus",
+          "id": "wa-translate",
           "name": "翻译"
         },
         {
-          "id": "none",
-          "name": "还不知道是啥"
+          "id": "wa-aes-decrypt",
+          "name": "aes解密"
         }
       ]
     },
     "menus": {
-      "explorer/context": [
-        {
-          "command": "extension.xlsxToTs",
-          "when": "resourceLangId == xlsx",
-          "group": "typescript support"
-        },
-        {
-          "command": "extension.createRfc",
-          "group": "typescript support",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "extension.createVue",
-          "group": "typescript support",
-          "when": "explorerResourceIsFolder"
-        },
-        {
-          "command": "extension.createClass",
-          "group": "typescript support",
-          "when": "explorerResourceIsFolder"
-        }
-      ],
-      "editor/title/context": [
-        {
-          "command": "extension.xlsxToTs",
-          "when": "resourceLangId == xlsx",
-          "group": "typescript support"
-        }
-      ]
+      "explorer/context": [],
+      "editor/title/context": []
     },
-    "languages": [
-      {
-        "id": "xlsx",
-        "extensions": [
-          ".xlsx",
-          ".xlsm"
-        ]
-      }
-    ],
-    "commands": [
-      {
-        "command": "extension.xlsxToTs",
-        "title": "xlsx转ts"
-      },
-      {
-        "command": "extension.createRfc",
-        "title": "生成rfc组件"
-      },
-      {
-        "command": "extension.createVue",
-        "title": "生成vue组件"
-      },
-      {
-        "command": "extension.createClass",
-        "title": "生成一个类"
-      },
-      {
-        "command": "extension.sideMenus",
-        "title": "侧边菜单"
-      }
-    ]
+    "languages": [],
+    "commands": []
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
@@ -168,13 +92,13 @@
     "webpack-cli": "^5.1.1"
   },
   "dependencies": {
+    "@adyen/adyen-web": "^6.1.1",
     "@release-it/conventional-changelog": "^8.0.1",
     "@types/md5": "^2.3.5",
     "axios": "^1.6.7",
     "fs": "^0.0.1-security",
     "md5": "^2.3.0",
-    "prettier": "^3.1.0",
-    "xlsx": "^0.18.5"
+    "prettier": "^3.1.0"
   },
   "repository": {
     "type": "git",

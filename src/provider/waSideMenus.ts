@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { channel } from "../utils";
+import { log } from "../utils/log";
 
 class SideMenusService implements vscode.TreeDataProvider<any> {
   constructor(private workspaceRoot: string | undefined) {}
@@ -11,7 +11,7 @@ class SideMenusService implements vscode.TreeDataProvider<any> {
     return Promise.resolve([]);
   }
   getTreeItem(element: any) {
-    channel.log(element);
+    log(element);
     return element;
   }
 }

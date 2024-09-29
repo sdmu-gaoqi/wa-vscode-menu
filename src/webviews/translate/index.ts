@@ -1,12 +1,14 @@
 import { window, Position, WebviewView, WebviewViewProvider } from "vscode";
-import { channel } from "../../utils";
+import { log } from "../../utils/log";
 export class ChatWebview implements WebviewViewProvider {
   // 写一个public变量，方便对象引用创建后的webview实例，但是可能存在还未完全解析完成时，访问值为null
   // 看了vscode api发现，resolveWebView 返回一个 Thenable，可以在解析完成后拿到webview实例
   // 但是这个函数是在webview容器第一次显示时自动执行，不需要手动调用，不知道怎么拿到Thenable
   public webview: WebviewView | null = null;
+
   resolveWebviewView(webviewView: WebviewView): void | Thenable<void> {
     this.webview = webviewView;
+    log("start");
     webviewView.webview.options = {
       enableScripts: true,
     };

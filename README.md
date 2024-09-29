@@ -1,6 +1,6 @@
-# wa-menus
+# wa-toolkit
 
-右键扩展
+窗口工具
 
 ---
 
