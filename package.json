@@ -48,7 +48,7 @@
           "name": "翻译"
         },
         {
-          "type": "webview",
+          "type": "tree",
           "id": "wa-aes-decrypt",
           "name": "aes解密"
         }

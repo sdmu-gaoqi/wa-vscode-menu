@@ -5,7 +5,5 @@ export const App = `<html lang="en">
     <title>Document</title>
   </head>
   <body>
-    <input style="background:transparent" />
-      <br />
   </body>
 </html>`;
